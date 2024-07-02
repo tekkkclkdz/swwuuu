@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Genos } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+const genos = Genos({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +18,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={genos.className}>{children}
+        <footer>
+          <div className="h-96 bg-black w-full">
+            <div className="grid grid-flow-row text-3xl gap-8 ml-20 mt-8">
+            <Link href="https://www.instagram.com/3sswwuu/" className="hover:underline">@3sswwuu</Link>
+            <h1>3sswwuu@gmail.com</h1>
+            <Link href="https://www.mathiaskarlgontard.com/" className="hover:underline">Mathias Karl Gontard Page</Link>
+              <h1 className="hover:underline">Managment</h1>
+            </div>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }

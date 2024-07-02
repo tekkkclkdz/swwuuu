@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Cinzel:wght@400..900&family=Victor+Mono:wght@500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,4 +32,15 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }
