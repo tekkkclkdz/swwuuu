@@ -2,7 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const NavBar = ({ home, isSelected }) => {
+const NavBar = ({ home, isSelected }:{
+  home: number
+  isSelected: number
+}) => {
   const [isVisible, setIsVisible] = useState(true);
 
   const handleScroll = () => {
