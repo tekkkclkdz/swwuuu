@@ -22,10 +22,10 @@ export default function RootLayout({
         <footer>
           <div className="h-96 bg-black w-full">
             <div className="grid grid-flow-row text-3xl gap-8 ml-20 mt-8">
-            <Link href="https://www.instagram.com/3sswwuu/" className="hover:underline">@3sswwuu</Link>
+            <a href="/model">Managment</a>
             <h1>3sswwuu@gmail.com</h1>
-            <Link href="https://www.mathiaskarlgontard.com/" className="hover:underline">Mathias Karl Gontard Page</Link>
-              <h1 className="hover:underline">Managment</h1>
+            <Link href="https://www.instagram.com/3sswwuu/" className="hover:underline">@3sswwuu</Link>
+            <Link href="https://www.mathiaskarlgontard.com/" className="hover:underline">Mathias Karl Gontard</Link>
             </div>
           </div>
         </footer>

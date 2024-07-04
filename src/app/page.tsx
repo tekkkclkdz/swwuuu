@@ -29,3 +29,6 @@ export default function Home() {
 // ataire
 
 // footer, instagram, managment, strona brata, email
+
+
+//wkleic fote do poetry, ogarnac zakladke photo, agenci do model, fota na 1/4, w music z tekstura, podmienic nute, na video black bg, naglowek, audio na mobilki, zamienic photo z model kolejnosc
