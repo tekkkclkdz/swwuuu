@@ -101,7 +101,7 @@ const PageBody = () => {
 
                 </div>
             </div> */}
-            <div className='relative'>
+            {/* <div className='relative'>
                 <div className=''>
                     <AudioPlayer />
                 </div>
@@ -109,7 +109,7 @@ const PageBody = () => {
                 <div className='absolute top-1/4 ml-40 w-96 h-1/2 text-black '>
                     <Image src={pic5} alt="pcc" className='' />
                 </div>
-            </div>
+            </div> */}
             
         </>
     )
