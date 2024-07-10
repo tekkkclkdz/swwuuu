@@ -6,8 +6,8 @@ import Masonry from "react-masonry-css";
 import type { LightGallery } from 'lightgallery/lightgallery';
 import LightGalleryComponent from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
-import 'lightgallery/css/lg-zoom.css';
-import 'lightgallery/css/lg-thumbnail.css';
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
 
 import pic1 from "../../../public/new_photo/SWU12_1.webp";
 import pic2 from "../../../public/new_photo/SWU14-5.webp";
@@ -67,6 +67,14 @@ export default function Home() {
         dynamicEl={pictures.map((allImg) => ({
           src: allImg.src,
         }))}
+        closable={true}
+        hideBarsDelay={3000}
+        mobileSettings={{
+          controls: false,
+          showCloseIcon: true,
+          download: false,
+        }}
+        
       />
     </div>
   );
