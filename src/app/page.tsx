@@ -31,4 +31,4 @@ export default function Home() {
 // footer, instagram, managment, strona brata, email
 
 
-//wkleic fote do poetry, ogarnac zakladke photo, agenci do model zwezyc, fota na 1/4, w music z tekstura, podmienic nute, na video black bg, naglowek imie do lewej, audio na mobilki, zamienic photo z model kolejnosc
+//wkleic fote do poetry, ogarnac zakladke photo, agenci do model zwezyc, fota na 1/4, w music z tekstura, podmienic nute, naglowek imie do lewej, audio na mobilki, zamienic photo z model kolejnosc

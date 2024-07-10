@@ -5,6 +5,8 @@ import Image from 'next/image';
 
 import PIC1 from "../../../public/B6.webp"
 
+import pic2 from "../../../public/B7.webp"
+
 const AudioPlayer: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -38,13 +40,21 @@ const AudioPlayer: React.FC = () => {
 
   return (
     <div className="bg-gray-100 p-4 flex justify-right  items-center  h-[calc(100svh)] ">
-      <div className="bg-white px-4 z-30 ml-64 mt-64 h-40 rounded-lg shadow-md w-1/2">
+      <Image
+        src={pic2}
+        alt="Background Image"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        className="absolute inset-0 z-0"
+      />
+      <div className="bg-white px-4 z-30 ml-24 sm:ml-64 sm:mt-64 mt-0 h-30 sm:mb-0 mb-12 sm:h-30 sm:h-40 rounded-lg shadow-md w-3/4 sm:w-1/2">
         {/* <!-- Album Cover --> */}
         {/* <Image src={PIC1} alt="idk" className="w-64 h-64 mx-auto rounded-lg mb-4 shadow-lg shadow-teal-50" /> */}
         {/* <!-- Song Title --> */}
-        <h2 className="text-xl font-semibold text-center">idk</h2>
+        {/* <h2 className="text-xl font-semibold text-center">idk</h2> */}
         {/* <!-- Artist Name --> */}
-        <p className="text-gray-600 text-sm text-center">64.mp3</p>
+        <p className="text-gray-600 text-sm text-center mt-4">Curtesy.mp3</p>
         {/* <!-- Music Controls --> */}
         <div className=" flex justify-center items-center">
           {/* <button onClick={() => audioRef.current && (audioRef.current.currentTime -= 10)} className="p-3 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none">
@@ -73,7 +83,7 @@ const AudioPlayer: React.FC = () => {
           </button> */}
         </div>
         {/* <!-- Progress Bar --> */}
-        <div className="mt-6 bg-gray-200 h-2 rounded-full">
+        <div className="mt-6  bg-gray-200 h-2 rounded-full">
           <div className="bg-black h-2 rounded-full" style={{ width: `${progress}%` }}></div>
         </div>
         {/* <!-- Time Information --> */}
@@ -82,7 +92,7 @@ const AudioPlayer: React.FC = () => {
           <span>{formatTime(duration)}</span>
         </div>
         {/* <!-- Audio Element --> */}
-        <audio ref={audioRef} onTimeUpdate={updateProgress} src="/sounds/64.mp3"></audio>
+        <audio ref={audioRef} onTimeUpdate={updateProgress} src="/sounds/Curtesy.mp3"></audio>
       </div>
     </div>
   );

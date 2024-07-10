@@ -9,15 +9,15 @@ import picL5 from "../../../public/longBody/row-5-column-1.webp"
 import picL6 from "../../../public/longBody/row-6-column-1.webp"
 import picL7 from "../../../public/longBody/row-7-column-1.webp"
 
-import L1 from "../../../public/long2/top1.png"
-import L2 from "../../../public/long2/L2_edit2.png"
+import L1 from "../../../public/long_best/top1-ezgif.com-png-to-webp-converter.webp"
+import L2 from "../../../public/long_best/L2_edit2-ezgif.com-optiwebp.webp"
 import L3 from "../../../public/long2/SWU21-copy_3_3412x4799.jpg"
 import L4 from "../../../public/long2/SWU21-copy_4_3412x4799.jpg"
-import L5 from "../../../public/long2/SWU21-copy_5_3412x4799.png"
+import L5 from "../../../public/long_best/SWU21-copy_5_3412x4799-ezgif.com-optiwebp.webp"
 import L6 from "../../../public/long2/SWU21-copy_6_3412x4799.jpg"
-import LV from "../../../public/long2/podfilm.png"
+import LV from "../../../public/long_best/podfilm-ezgif.com-png-to-webp-converter.webp"
 
-import T1 from "../../../public/long2/edit_short.png"
+import T1 from "../../../public/long_best/edit_short-ezgif.com-png-to-webp-converter.webp"
 import T2 from "../../../public/long2/Screenshot 2024-07-04 at 20.10.22.png"
 
 import pic1 from "./../../../public/B1.webp"
@@ -41,8 +41,8 @@ import AudioPlayer from './AudioPlayer'
 const PageBody = () => {
     return (
         <>
-            
-            <div className='relative'>
+            <div className='bg-black'>
+                <div className='relative'>
                 <Image src={T1} alt="m1" layout="responsive" className='' />
                 {/* <div className='absolute inset-0 flex justify-center items-center'>
                     <div className='w-1/2'>
@@ -101,15 +101,17 @@ const PageBody = () => {
 
                 </div>
             </div> */}
-            {/* <div className='relative'>
+             <div className='relative'>
                 <div className=''>
                     <AudioPlayer />
                 </div>
                 
-                <div className='absolute top-1/4 ml-40 w-96 h-1/2 text-black '>
+                <div className='absolute top-20 sm:top-1/4 ml-12 sm:ml-40 sm:w-96 w-60 sm:h-1/2 text-black '>
                     <Image src={pic5} alt="pcc" className='' />
                 </div>
-            </div> */}
+            </div> 
+            </div>
+            
             
         </>
     )

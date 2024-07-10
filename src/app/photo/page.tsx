@@ -19,11 +19,11 @@ import MediaBody from '../components/MediaBody';
 const PageBody = () => {
     return (
         <>
-            <div className='flex justify-center items-center h-screen bg-white'>
+           
                 <MediaBody />
-            </div>
+           
             
-            <NavBar home={0} isSelected={1}/>
+            <NavBar home={0} isSelected={2}/>
         </>
     )
 }

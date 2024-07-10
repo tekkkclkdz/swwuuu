@@ -22,19 +22,20 @@ const NavBar = ({ home, isSelected }:{
     }
   }, [home]);
 
-  const tabLabels = ["home", "photo", "model", "music", "video", "poetry"];
+  const tabLabels = ["home", "model", "photo", "music", "video", "poetry"];
 
   return (
     <>
       {/* Vertical Captions Navbar */}
       {home === 1 && (
         <div
-          className={`mix-blend-difference  text-center text-3xl lg:text-8xl font-normal transition-opacity duration-800 ease-in-out absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap z-50 ${
-            isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          } top-3/4 md:top-3/4 lg:top-3/4 sm:top-[60%]`}
-        >
-          Maximilien Antoine Gontard
-        </div>
+        className={`mix-blend-difference text-center text-3xl lg:text-8xl font-normal transition-opacity duration-800 ease-in-out absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap z-50 ${
+          isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        } top-3/4 md:top-3/4 lg:top-3/4 sm:top-[60%]`}
+        style={{ color: 'white', textShadow: '0 0 5px rgba(0, 0, 0, 0.5)' }} // Ensure visibility in light mode
+      >
+        Maximilien Antoine Gontard
+      </div>
       )}
 
       {/* Bottom Navbar */}

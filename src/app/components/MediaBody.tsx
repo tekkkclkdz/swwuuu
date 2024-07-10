@@ -1,33 +1,73 @@
-import React from 'react';
-import Image from 'next/image';
-import pic1 from "../../../public/new_photo/SWU12_1 copy.webp";
-import pic2 from "../../../public/new_photo/SWU14-5 copy.webp";
-import pic3 from "../../../public/new_photo/SWU20-2 copy.webp";
-import pic4 from "../../../public/new_photo/SWU20-6 copy.webp";
-import pic5 from "../../../public/new_photo/SWU25-4 copy.webp";
-import pic6 from "../../../public/new_photo/SWU26 copy 2.webp";
-import pic7 from "../../../public/new_photo/SWU29-1-tiff copy.webp";
-import pic8 from "../../../public/new_photo/SWU29-3-tiff copy.webp";
-import pic9 from "../../../public/new_photo/SWU30-6 copy.webp";
-import pic10 from "../../../public/new_photo/SWU31-2 copy.webp";
+"use client";
+import Image from "next/image";
+import React, { useRef } from "react";
+import Masonry from "react-masonry-css";
 
-const images = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10];
+import type { LightGallery } from 'lightgallery/lightgallery';
+import LightGalleryComponent from 'lightgallery/react';
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lg-thumbnail.css';
 
-const MediaBody = () => {
+import pic1 from "../../../public/new_photo/SWU12_1.webp";
+import pic2 from "../../../public/new_photo/SWU14-5.webp";
+import pic3 from "../../../public/new_photo/SWU20-2.webp";
+import pic4 from "../../../public/new_photo/SWU20-6.webp";
+import pic5 from "../../../public/new_photo/SWU25-4.webp";
+import pic6 from "../../../public/new_photo/SWU26.webp";
+import pic7 from "../../../public/new_photo/SWU29-1-tiff.webp";
+import pic8 from "../../../public/new_photo/SWU29-3-tiff.webp";
+import pic9 from "../../../public/new_photo/SWU30-6.webp";
+import pic10 from "../../../public/new_photo/SWU31-2.webp";
+
+const pictures = [pic1, pic5, pic7, pic2, pic6, pic4, pic8, pic3, pic9, pic10];
+
+const breakpointColumnsObj = {
+  default: 5,
+  1024: 4,
+  768: 2,
+};
+
+export default function Home() {
+  const lightboxRef = useRef<LightGallery | null>(null);
+
   return (
-    <div className='flex justify-center items-center bg-white'>
-      <div className="columns-2 md:columns-5 gap-4">
-        {images.map((image, index) => (
-          <div key={index} className="mb-4 break-inside-avoid-column">
-            <Image className="h-auto max-w-full" src={image} alt={`Image ${index + 1}`} />
+    <div className="bg-white" suppressHydrationWarning={true}>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="flex w-full gap-4 px-4"
+        columnClassName="masonry-column"
+      >
+        {pictures.map((pics, idx) => (
+          <div key={pics.src} className="my-2">
+            <Image
+              src={pics}
+              alt="placeholder"
+              className="transition duration-150 hover:opacity-70 cursor-pointer"
+              placeholder="blur"
+              onClick={() => {
+                lightboxRef.current?.openGallery(idx);
+              }}
+              width={500} // Provide width and height for better performance
+              height={200}
+            />
           </div>
         ))}
-      </div>
-      <div className='h-screen'>
-
-      </div>
+      </Masonry>
+      <LightGalleryComponent
+        onInit={(ref) => {
+          if (ref) {
+            lightboxRef.current = ref.instance;
+          }
+        }}
+        speed={500}
+        plugins={[]}
+        dynamic
+        download={false}
+        dynamicEl={pictures.map((allImg) => ({
+          src: allImg.src,
+        }))}
+      />
     </div>
   );
 }
-
-export default MediaBody;

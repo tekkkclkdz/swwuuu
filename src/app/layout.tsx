@@ -17,16 +17,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={genos.className}>{children}
-        <footer>
-          <div className="h-96 bg-black w-full">
-            <div className="grid grid-flow-row text-3xl gap-8 ml-20 mt-8">
+    <html lang="en" className="dark">
+      <body className={`${genos.className} flex flex-col min-h-screen`}>
+        <main className="">{children}</main>
+        <footer className=" bg-black w-full h-60 sm:h-96">
+          <div className="grid grid-flow-row text-xl sm:text-3xl gap-4 sm:gap-8 ml-2 sm:ml-20 mt-4 sm:mt-8 text-white">
             <a href="/model">Managment</a>
             <h1>3sswwuu@gmail.com</h1>
             <Link href="https://www.instagram.com/3sswwuu/" className="hover:underline">@3sswwuu</Link>
             <Link href="https://www.mathiaskarlgontard.com/" className="hover:underline">Mathias Karl Gontard</Link>
-            </div>
           </div>
         </footer>
       </body>
