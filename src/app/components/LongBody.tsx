@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import picL1 from "../../../public/longBody/row-1-column-1.webp"
 import picL2 from "../../../public/longBody/row-2-column-1.webp"
@@ -36,87 +37,61 @@ import END from "./../../../public/long2/end_short.png"
 import SNG1 from "./../../../public/audio/64.mp3"
 import AudioPlayer from './AudioPlayer'
 
-
-
 const PageBody = () => {
     return (
         <>
             <div className='bg-black'>
                 <div className='relative'>
-                <Image src={T1} alt="m1" layout="responsive" className='' />
-                {/* <div className='absolute inset-0 flex justify-center items-center'>
-                    <div className='w-1/2'>
-                        <Image src={pic1} alt="m1" layout="responsive" />
-                    </div>
-                </div> */}
-            </div>
-            
-            <div className='relative'>
-                <Image src={L5} alt="m1" layout="responsive" className='' />
-                {/* <div className='absolute inset-0 flex justify-center items-center'>
-                    <div className='w-1/2'>
-                        <Image src={pic1} alt="m1" layout="responsive" />
-                    </div>
-                </div> */}
-            </div>
-            <div className='relative'> 
-                <Image src={L1} alt="pic6" layout="" className=''/>
-                {/* <p className='text-clip mix-blend-difference absolute top-0 ml-8 mr-16 mt-24 left-0 text-justify sm:text-2xl text-sm  lg:w-1/2 '>
-                    Built purse maids cease her ham new seven among and. Pulled coming wooded tended it answer remain me be. So landlord by we unlocked sensible it. Fat cannot use denied excuse son law. Wisdom happen suffer common the appear ham beauty her had. Or belonging zealously existence as by resources.
-                </p> */}
-                <div className='absolute inset-0 flex justify-center items-center'>
-                    <div className='w-3/4 mt-2'>
-                        <Image src={pic1} alt="m1" layout="responsive" />
-                    </div>
+                    <Image src={T1} alt="m1" layout="responsive" className='' />
                 </div>
-            </div>
-            <div className='relative'>
-                <Image src={L2} alt="m1" layout="responsive" />
-                {/* <div className='absolute inset-0 flex justify-center items-center'>
-                    <div className='w-1/2'>
-                        <Image src={pic1} alt="m1" layout="responsive" />
-                    </div>
-                </div> */}
-            </div>
-            <div className='relative'>
-                <Image src={LV} alt="pic8" layout="responsive" className='rotate-180'/>
-                <div className='absolute inset-0 flex justify-center items-center'>
+            
+                <div className='relative'>
+                    <Image src={L5} alt="m1" layout="responsive" className='' />
+                </div>
+                
+                <div className='relative'>
+                    <Image src={L1} alt="pic6" layout="" className=''/>
                     <div className='absolute inset-0 flex justify-center items-center'>
-                        <div className='w-3/4'>
-                            <Image src={GIF1} alt="m1" layout="responsive" />
+                        <div className='w-3/4 mt-2'>
+                            <Link href="/photo">
+                                <Image src={pic1} alt="m1" layout="responsive" className="cursor-pointer"/>
+                            </Link>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className='relative'>
-                <Image src={END} alt="m1" layout="responsive" className='rotate-180'/>
-            </div>
-            {/* <div className='relative '>
-                <Image src={L4} alt="pic8" layout="responsive" />
-                <div className='absolute inset-0 flex justify-center items-center'>
-
-                    <div className='w-3/4'>
-                        <Image src={picM1} alt="m1" layout="responsive" />
-                    </div>
-
-                </div>
-            </div> */}
-             <div className='relative'>
-                <div className=''>
-                    <AudioPlayer />
+                
+                <div className='relative'>
+                    <Image src={L2} alt="m1" layout="responsive" />
                 </div>
                 
-                <div className='absolute top-20 sm:top-1/4 ml-12 sm:ml-40 sm:w-96 w-60 sm:h-1/2 text-black '>
-                    <Image src={pic5} alt="pcc" className='' />
+                <div className='relative'>
+                    <Image src={LV} alt="pic8" layout="responsive" className='rotate-180'/>
+                    <div className='absolute inset-0 flex justify-center items-center'>
+                        <div className='absolute inset-0 flex justify-center items-center'>
+                            <div className='w-3/4'>
+                                <Link href="/video">
+                                    <Image src={GIF1} alt="m1" layout="responsive" className="cursor-pointer"/>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div> 
+                
+                <div className='relative'>
+                    <Image src={END} alt="m1" layout="responsive" className='rotate-180'/>
+                </div>
+                
+                <div className='relative'>
+                    <div className=''>
+                        <AudioPlayer />
+                    </div>
+                    <div className='absolute top-20 sm:top-1/4 ml-12 sm:ml-40 sm:w-96 w-60 sm:h-1/2 text-black '>
+                        <Image src={pic5} alt="pcc" className='' />
+                    </div>
+                </div> 
             </div>
-            
-            
         </>
     )
 }
 
 export default PageBody
-
-//

@@ -18,6 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <link rel="shortcut icon" href="./favicon.ico" />
       <body className={`${genos.className} flex flex-col min-h-screen`}>
         <main className="">{children}</main>
         <footer className=" bg-black w-full h-60 sm:h-96">
