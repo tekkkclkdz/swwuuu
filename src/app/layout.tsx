@@ -24,7 +24,7 @@ export default function RootLayout({
         <footer className=" bg-black w-full h-60 sm:h-96">
           <div className="grid grid-flow-row text-xl sm:text-3xl gap-4 sm:gap-8 ml-2 sm:ml-20 mt-4 sm:mt-8 text-white">
             <a href="/model">Managment</a>
-            <h1>3sswwuu@gmail.com</h1>
+            <h1>maxantoine.swu@gmail.com</h1>
             <Link href="https://www.instagram.com/3sswwuu/" className="hover:underline">@3sswwuu</Link>
             <Link href="https://www.mathiaskarlgontard.com/" className="hover:underline">Mathias Karl Gontard</Link>
           </div>

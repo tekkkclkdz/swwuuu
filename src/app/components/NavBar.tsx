@@ -22,14 +22,14 @@ const NavBar = ({ home, isSelected }:{
     }
   }, [home]);
 
-  const tabLabels = ["home", "model", "photo", "music", "video", "poetry"];
+  const tabLabels = ["home", "audio", "visual", "modeling", "acting"];
 
   return (
     <>
       {/* Vertical Captions Navbar */}
       {home === 1 && (
         <div
-        className={`mix-blend-difference text-center text-3xl lg:text-8xl font-normal transition-opacity duration-800 ease-in-out absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap z-50 ${
+        className={`mix-blend-difference text-center text-3xl lg:text-5xl font-normal transition-opacity duration-800 ease-in-out absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap z-50 ${
           isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         } top-3/4 md:top-3/4 lg:top-3/4 sm:top-[60%]`}
         style={{ color: 'white', textShadow: '0 0 5px rgba(0, 0, 0, 0.5)' }} // Ensure visibility in light mode
@@ -40,7 +40,7 @@ const NavBar = ({ home, isSelected }:{
 
       {/* Bottom Navbar */}
       <div
-        className={`text-black text-2xl lg:text-4xl z-50 font-normal transition-opacity duration-800 ease-in-out fixed bottom-0 left-0 w-full grid grid-cols-6 bg-white z-10 ${
+        className={`text-black text-2xl lg:text-4xl z-50 font-normal transition-opacity duration-800 ease-in-out fixed bottom-0 left-0 w-full grid grid-cols-5 bg-white z-10 ${
           home === 1 ? (isVisible ? 'opacity-0 pointer-events-none' : 'opacity-100') : 'opacity-100'
         }`}
         style={{ transition: 'opacity 0.4s ease-in-out' }}

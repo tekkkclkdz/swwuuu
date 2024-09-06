@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import video1 from '../../../public/AV1-ezgif.com-optimize.gif'
 
 import picL1 from "../../../public/longBody/row-1-column-1.webp"
 import picL2 from "../../../public/longBody/row-2-column-1.webp"
@@ -32,6 +33,10 @@ import pic8 from "./../../../public/B8.webp"
 import picM1 from "./../../../public/MAXWEBJPG4.webp"
 import GIF1 from "./../../../public/StepWebPolangGif-ezgif.com-optimize (1).gif"
 
+import paris from "../../../public/paris1.webp"
+
+import audioBackgroundPic from "./../../../public/music_background.jpg"
+
 import END from "./../../../public/long2/end_short.png"
 
 import SNG1 from "./../../../public/audio/64.mp3"
@@ -43,52 +48,55 @@ const PageBody = () => {
             <div className='bg-black'>
                 <div className='relative'>
                     <Image src={T1} alt="m1" layout="responsive" className='' />
+                    <p className='flex justify-center items-center absolute top-0 left-1/2 transform -translate-x-1/2 mt-14 text-center sm:text-2xl text-sm'>
+                        BORN IN 2005. FRANCO-POLISH FASHION MODEL AND ARTIST EXPLORING AUDIO-VISUAL AND WRITTEN MEDIA.
+                    </p>
                 </div>
-            
-                <div className='relative'>
+
+                {/* <div className='relative'>
                     <Image src={L5} alt="m1" layout="responsive" className='' />
-                </div>
-                
+                </div> */}
+
                 <div className='relative'>
-                    <Image src={L1} alt="pic6" layout="" className=''/>
+                    <Image src={L1} alt="pic6" layout="" className='' />
                     <div className='absolute inset-0 flex justify-center items-center'>
                         <div className='w-3/4 mt-2'>
                             <Link href="/photo">
-                                <Image src={pic1} alt="m1" layout="responsive" className="cursor-pointer"/>
+                                <Image src={paris} alt="m1" layout="responsive" className="cursor-pointer" />
                             </Link>
                         </div>
                     </div>
                 </div>
-                
+
                 <div className='relative'>
                     <Image src={L2} alt="m1" layout="responsive" />
                 </div>
-                
+
                 <div className='relative'>
-                    <Image src={LV} alt="pic8" layout="responsive" className='rotate-180'/>
+                    <Image src={LV} alt="pic8" layout="responsive" className='rotate-180' />
                     <div className='absolute inset-0 flex justify-center items-center'>
                         <div className='absolute inset-0 flex justify-center items-center'>
                             <div className='w-3/4'>
                                 <Link href="/video">
-                                    <Image src={GIF1} alt="m1" layout="responsive" className="cursor-pointer"/>
+                                    <Image src={video1} alt="m1" layout="responsive" className="cursor-pointer" />
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div className='relative'>
-                    <Image src={END} alt="m1" layout="responsive" className='rotate-180'/>
+                    <Image src={END} alt="m1" layout="responsive" className='rotate-180' />
                 </div>
-                
+
                 <div className='relative'>
                     <div className=''>
                         <AudioPlayer />
                     </div>
                     <div className='absolute top-20 sm:top-1/4 ml-12 sm:ml-40 sm:w-96 w-60 sm:h-1/2 text-black '>
-                        <Image src={pic5} alt="pcc" className='' />
+                        <Image src={audioBackgroundPic} alt="pcc" className='' />
                     </div>
-                </div> 
+                </div>
             </div>
         </>
     )
