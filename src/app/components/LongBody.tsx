@@ -62,15 +62,15 @@ const PageBody = () => {
                     <div className='absolute inset-0 flex justify-center items-center'>
                         <div className='w-3/4 mt-2'>
                             <Link href="/photo">
-                                <Image src={paris} alt="m1" layout="responsive" className="cursor-pointer" />
+                                <Image src={pic1} alt="m1" layout="responsive" className="cursor-pointer mt-40" />
                             </Link>
                         </div>
                     </div>
                 </div>
 
-                <div className='relative'>
+                {/* <div className='relative'>
                     <Image src={L2} alt="m1" layout="responsive" />
-                </div>
+                </div> */}
 
                 <div className='relative'>
                     <Image src={LV} alt="pic8" layout="responsive" className='rotate-180' />
@@ -78,7 +78,7 @@ const PageBody = () => {
                         <div className='absolute inset-0 flex justify-center items-center'>
                             <div className='w-3/4'>
                                 <Link href="/video">
-                                    <Image src={video1} alt="m1" layout="responsive" className="cursor-pointer" />
+                                    <Image src={GIF1} alt="m1" layout="responsive" className="cursor-pointer " />
                                 </Link>
                             </div>
                         </div>
