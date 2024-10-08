@@ -1,65 +1,83 @@
-import React from 'react';
+"use client"
+import React, { useState } from 'react';
 import Image from 'next/image';
-import NavBar from '../components/NavBar';
+import GIF1 from '../../../public/StepWebPolangGif-ezgif.com-optimize (1).gif';
+import PIC1 from '../../../public/long2/podfilm.png';
+import video from '../../../public/AV1-ezgif.com-optimize.gif';
 
-import GIF1 from "../../../public/StepWebPolangGif-ezgif.com-optimize (1).gif";
-import PIC1 from "../../../public/long2/podfilm.png"
-
-import video from "../../../public/AV1-ezgif.com-optimize.gif"
+const slides = [
+  { type: 'image', src: GIF1, alt: 'GIF Slide' },
+  { type: 'video', src: video, alt: 'Video Slide' },
+];
 
 const Page = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
   return (
-    <div className='relative bg-black'>
-      {/* Section 1 */}
-      <div className='h-screen relative'>
-        {/* Background Image */}
-        <Image
-          src={PIC1}
-          alt="Background Image"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          className="absolute inset-0 z-0"
-        />
+    <div className="relative bg-black h-screen">
+      {/* Background Image */}
+      <Image
+        src={PIC1}
+        alt="Background Image"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        className="absolute inset-0 z-0"
+      />
 
-        {/* Content */}
-        <div className='h-full flex flex-col relative z-10'>
-          {/* Centered Image */}
-          <div className='flex-grow flex justify-center items-center'>
-            <div className='h-3/4 w-3/4'>
-              <Image src={GIF1} alt="smm" className='object-contain h-full w-full' />
-            </div>
-          </div>
+      {/* Content */}
+      <div className="h-full flex flex-col justify-center items-center relative z-10">
+        {/* Slideshow */}
+        <div className="relative w-3/4 h-3/4">
+          {slides[currentSlide].type === 'image' && (
+            <Image
+              src={slides[currentSlide].src}
+              alt={slides[currentSlide].alt}
+              layout="fill"
+              objectFit="contain"
+              className="transition-opacity duration-500"
+            />
+          )}
+          {slides[currentSlide].type === 'video' && (
+            <Image
+              src={slides[currentSlide].src}
+              alt={slides[currentSlide].alt}
+              layout="fill"
+              objectFit="contain"
+              className="transition-opacity duration-500"
+            />
+          )}
         </div>
-      </div>
 
-      {/* Section 2 - Duplicate */}
-      <div className='h-screen relative'>
-        {/* Background Image */}
-        <Image
-          src={PIC1}
-          alt="Background Image"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          className="absolute inset-0 z-0"
-        />
+        {/* Navigation Arrows Below Slideshow */}
+        <div className="flex justify-between w-1/2 mt-4">
+          {/* Left Arrow */}
+          <button
+            onClick={prevSlide}
+            className="text-white text-4xl p-2"
+          >
+            &#8592;
+          </button>
 
-        {/* Content */}
-        <div className='h-full flex flex-col relative z-10'>
-          {/* Centered Image */}
-          <div className='flex-grow flex justify-center items-center'>
-            <div className='h-3/4 w-3/4'>
-              <Image src={video} alt="smm" className='object-contain h-full w-full' />
-            </div>
-          </div>
-
-          {/* Navigation (optional, if needed for both sections) */}
-          <NavBar home={0} isSelected={2} />
+          {/* Right Arrow */}
+          <button
+            onClick={nextSlide}
+            className="text-white text-4xl p-2"
+          >
+            &#8594;
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Page;
