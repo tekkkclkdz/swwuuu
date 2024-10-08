@@ -2,7 +2,13 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
-import pic2 from '../../../public/B7.webp';
+import L1 from "../../../public/long_best/top1-ezgif.com-png-to-webp-converter.webp"
+import L2 from "../../../public/long_best/L2_edit2-ezgif.com-optiwebp.webp"
+import L3 from "../../../public/long2/SWU21-copy_3_3412x4799.jpg"
+import L4 from "../../../public/long2/SWU21-copy_4_3412x4799.jpg"
+import L5 from "../../../public/long_best/SWU21-copy_5_3412x4799-ezgif.com-optiwebp.webp"
+import L6 from "../../../public/long2/SWU21-copy_6_3412x4799.jpg"
+import LV from "../../../public/long_best/podfilm-ezgif.com-png-to-webp-converter.webp"
 
 const AudioPlayer: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -70,19 +76,45 @@ const AudioPlayer: React.FC = () => {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
+  const skipForward = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = Math.min(audioRef.current.duration, audioRef.current.currentTime + 10);
+    }
+  };
+
+  const skipBackward = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = Math.max(0, audioRef.current.currentTime - 10);
+    }
+  };
+
   return (
-    <div className="bg-gray-100 p-4 flex justify-right items-center h-[calc(100svh)]">
+    <div className='relative'>
+      <div className="relative bg-gray-100 p-8 flex justify-right items-center h-[calc(100svh)]">
       <Image
-        src={pic2}
+        src={L4}
         alt="Background Image"
         layout="fill"
         objectFit="cover"
         objectPosition="center"
-        className="absolute inset-0 z-0"
+        className="relative"
       />
-      <div className="bg-white px-4 z-30 ml-24 sm:ml-64 sm:mt-64 mt-0 h-30 sm:mb-0 mb-12 sm:h-30 sm:h-40 rounded-lg shadow-md w-3/4 sm:w-1/2">
+      <div className="bg-white px-4 z-30 ml-0 mt-60 sm:ml-32 sm:mt-64 mb-0 sm:mb-72 h-[100px] sm:h-[100px] shadow-md w-11/12 sm:w-3/4">
         <p className="text-gray-600 text-sm text-center mt-4">Curtesy.mp3</p>
+
+        {/* Flex container for buttons */}
         <div className="flex justify-center items-center">
+          {/* Skip Backward Button */}
+          <div className="flex items-center mx-4">
+            <span className="text-sm text-gray-600 mr-2">-10</span> {/* Tekst -10 */}
+            <button onClick={skipBackward} className="hover:gray-300 focus:outline-none mt-0.5">
+              <svg width="64px" height="64px" viewBox="0 0 24 24" className="w-6 h-6 text-gray-600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 19V5L7 12L15 19Z" fill="#000000" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Play/Pause Button */}
           <button onClick={togglePlayPause} className="hover:gray-300 focus:outline-none mx-4">
             {isPlaying ? (
               <svg width="64px" height="64px" viewBox="0 0 24 24" className="w-6 h-6 text-gray-600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,34 +127,49 @@ const AudioPlayer: React.FC = () => {
               </svg>
             )}
           </button>
+
+          {/* Skip Forward Button */}
+          <div className="flex items-center mx-4">
+            <button onClick={skipForward} className="hover:gray-300 mt-0.5 focus:outline-none">
+              <svg width="64px" height="64px" viewBox="0 0 24 24" className="w-6 h-6 text-gray-600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 5V19L17 12L9 5Z" fill="#000000" />
+              </svg>
+            </button>
+            <span className="text-sm text-gray-600 ">+10</span> {/* Tekst +10 */}
+          </div>
         </div>
-        {/* <!-- Progress Bar --> */}
+
+        {/* Progress Bar */}
         <div
-          className="mt-6 bg-gray-200 h-2 rounded-full relative cursor-pointer"
+          className="mt-2 bg-gray-200 h-1 rounded-full relative cursor-pointer"
           onClick={handleProgressClick}
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
         >
           <div
-            className="bg-black h-2 rounded-full"
+            className="bg-black h-1 rounded-full"
             style={{ width: `${progress}%` }}
           >
             {/* Draggable Handle */}
-            <div
+            {/* <div
               className="absolute right-0 top-[-4px] w-4 h-4 bg-white border border-gray-300 rounded-full shadow cursor-pointer transform -translate-x-1/2"
               style={{ left: `${progress}%` }}
-            />
+            /> */}
           </div>
         </div>
-        {/* <!-- Time Information --> */}
+
+        {/* Time Information */}
         <div className="flex justify-between mt-2 text-sm text-gray-600">
           <span>{formatTime((progress / 100) * duration)}</span>
           <span>{formatTime(duration)}</span>
         </div>
-        {/* <!-- Audio Element --> */}
+
+        {/* Audio Element */}
         <audio ref={audioRef} src="/sounds/Curtesy.mp3"></audio>
       </div>
     </div>
+    </div>
+    
   );
 };
 

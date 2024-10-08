@@ -23,12 +23,19 @@ const Page = () => {
       {/* Content */}
       <div className='h-full flex flex-col relative z-10'>
         {/* Centered Image */}
-        <div className='flex-grow flex justify-center items-center'>
-          <div className='h-3/4 w-3/4'>
+        <div className='flex-grow flex justify-center items-center flex-col'>
+          <div className='h-2/3 w-2/3'>
             <Image src={video} alt="smm" className='object-contain h-full w-full' />
           </div>
+
+          {/* Centered Text directly under video */}
+          <div className="text-center text-white w-full pt-2">
+            <p className="text-lg">Short film, Warsaw Boy (2022)</p>
+            <p className="text-lg">Directed by Natalia Naomi</p>
+            <p className="text-lg">Contact for link</p>
+          </div>
         </div>
-        
+
         {/* Navigation */}
         <NavBar home={0} isSelected={2} />
       </div>

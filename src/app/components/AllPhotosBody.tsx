@@ -22,13 +22,13 @@ import pic10 from "../../../public/new_photo/SWU31-2.webp";
 
 
 
-const pictures = [pic2, pic6, pic9, pic7, pic6, pic5, pic8, pic3, pic9, pic10];
+const pictures = [pic1, pic5, pic7, pic2, pic6, pic4, pic8, pic3, pic9, pic10];
 
 const breakpointColumnsObj = {
   default: 5,
   1024: 4,
   768: 2,
-  
+
 };
 
 

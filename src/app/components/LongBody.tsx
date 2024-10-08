@@ -42,14 +42,16 @@ import END from "./../../../public/long2/end_short.png"
 import SNG1 from "./../../../public/audio/64.mp3"
 import AudioPlayer from './AudioPlayer'
 
+import color from "./../../../public/AV1-ezgif.com-optimize.gif"
+
 const PageBody = () => {
     return (
         <>
             <div className='bg-black'>
                 <div className='relative'>
                     <Image src={T1} alt="m1" layout="responsive" className='' />
-                    <p className='flex justify-center items-center absolute top-0 left-1/2 transform -translate-x-1/2 mt-14 text-center sm:text-2xl text-sm'>
-                        BORN IN 2005. FRANCO-POLISH FASHION MODEL AND ARTIST EXPLORING AUDIO-VISUAL AND WRITTEN MEDIA.
+                    <p className='flex justify-center items-center absolute top-0 left-1/2 transform -translate-x-1/2 sm:mt-14 mt-8 text-center sm:text-2xl text-xs'>
+                        FRANCO-POLISH FASHION MODEL AND ARTIST EXPLORING AUDIO-VISUAL AND WRITTEN MEDIA TECHNIQUES. BORN IN 2005.
                     </p>
                 </div>
 
@@ -62,7 +64,7 @@ const PageBody = () => {
                     <div className='absolute inset-0 flex justify-center items-center'>
                         <div className='w-3/4 mt-2'>
                             <Link href="/photo">
-                                <Image src={pic1} alt="m1" layout="responsive" className="cursor-pointer mt-40" />
+                                <Image src={pic1} alt="m1" layout="responsive" className="cursor-pointer mt-36" />
                             </Link>
                         </div>
                     </div>
@@ -76,25 +78,46 @@ const PageBody = () => {
                     <Image src={LV} alt="pic8" layout="responsive" className='rotate-180' />
                     <div className='absolute inset-0 flex justify-center items-center'>
                         <div className='absolute inset-0 flex justify-center items-center'>
-                            <div className='w-3/4'>
+                            <div className='w-5/12'>
                                 <Link href="/video">
-                                    <Image src={GIF1} alt="m1" layout="responsive" className="cursor-pointer " />
+                                    <Image src={GIF1} alt="m1" layout="responsive" className="cursor-pointer mb-12" />
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className='relative'>
+                {/* <div className='relative'>
                     <Image src={END} alt="m1" layout="responsive" className='rotate-180' />
-                </div>
+                </div> */}
 
                 <div className='relative'>
                     <div className=''>
                         <AudioPlayer />
                     </div>
-                    <div className='absolute top-20 sm:top-1/4 ml-12 sm:ml-40 sm:w-96 w-60 sm:h-1/2 text-black '>
-                        <Image src={audioBackgroundPic} alt="pcc" className='' />
+                    <div className='absolute sm:top-0 top-1/4 ml-8 sm:ml-40 text-black '>
+                        <Image src={audioBackgroundPic} alt="pcc" className='w-3/4' />
+                    </div>
+                </div>
+
+                <div className='relative'>
+                    <Image src={L5} alt="pic6" layout="" className='' />
+                    <div className='absolute inset-0 flex justify-center items-center'>
+                        <div className='w-1/2 mt-2'>
+                            <Link href="/photo">
+                                <Image src={paris} alt="m1" layout="responsive" className="cursor-pointer mt-36" />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+                <div className='relative'>
+                    <Image src={L6} alt="pic6" layout="" className='' />
+                    <div className='absolute inset-0 flex justify-center items-center'>
+                        <div className='w-1/2 mt-2'>
+                            <Link href="/photo">
+                                <Image src={color} alt="m1" layout="responsive" className="cursor-pointer mt-36" />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

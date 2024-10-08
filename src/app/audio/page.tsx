@@ -12,14 +12,13 @@ const Home: React.FC = () => {
   return (
     <div>
       <div className='relative'>
-                <div className=''>
-                    <AudioPlayer />
+                    <div className=''>
+                        <AudioPlayer />
+                    </div>
+                    <div className='absolute sm:top-0 top-1/4 ml-8 sm:ml-40 text-black '>
+                        <Image src={audioBack} alt="pcc" className='w-3/4' />
+                    </div>
                 </div>
-                
-                <div className='absolute top-20 sm:top-1/4 ml-12 sm:ml-40 sm:w-96 w-60 sm:h-1/2 text-black '>
-                    <Image src={audioBack} alt="pcc" className='' />
-                </div>
-            </div>
       <NavBar home={0} isSelected={1}/>
     </div>
       
