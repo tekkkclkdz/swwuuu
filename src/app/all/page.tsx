@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <div className="absolute w-full h-full left-0 top-0" suppressHydrationWarning={true}>
-      <NavBar />
+      <NavBar home={0} isSelected={2} />
       <Masonry className="flex gap-2 bg-white" columnClassName="" breakpointCols={breakpointCols}>
               {pictures.map((pics, idx) => (
               <Image
