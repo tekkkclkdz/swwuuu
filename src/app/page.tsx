@@ -3,6 +3,7 @@ import PageIntro from "./components/PageIntro";
 import PageBody from "./components/PageBody";
 import Bio from "./components/Bio"
 import LongBody from "./components/LongBody";
+import MainBody from "./components/MainBody";
 
 export default function Home() {
   return (
@@ -10,7 +11,8 @@ export default function Home() {
       <div className="">
         <PageIntro />
         {/* <Bio /> */}
-        <LongBody />
+        {/* <LongBody /> */}
+        <MainBody />
       </div>
       
     </main>

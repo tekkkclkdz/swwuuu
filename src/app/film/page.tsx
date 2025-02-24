@@ -4,6 +4,7 @@ import Image from 'next/image';
 import GIF1 from '../../../public/StepWebPolangGif-ezgif.com-optimize (1).gif';
 import PIC1 from '../../../public/long2/podfilm.png';
 import video from '../../../public/AV1-ezgif.com-optimize.gif';
+import NavBar from '../components/NavBar';
 
 const slides = [
   { type: 'image', src: GIF1, alt: 'GIF Slide' },
@@ -76,6 +77,7 @@ const Page = () => {
           </button>
         </div>
       </div>
+      <NavBar home={0} isSelected={4}/>
     </div>
   );
 };

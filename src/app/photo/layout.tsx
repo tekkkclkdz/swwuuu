@@ -5,7 +5,7 @@ export default function AuthLayout({
 }) {
     return (
         <div>
-            <h2 className="h-10  ml-2 text-3xl">Maximilien Antoine Gontard</h2>
+            {/* <h2 className="h-10  ml-2 text-3xl">Maximilien Antoine Gontard</h2> */}
             {children}
         </div>
     )

@@ -20,7 +20,7 @@ const Page = () => {
       {/* Overlay Grid */}
       <div className="relative z-10 grid grid-cols-2 h-full">
         {/* Left Half */}
-        <Link href="/bricks" className="relative group flex items-center justify-center cursor-pointer">
+        <Link href="/photo" className="relative group flex items-center justify-center cursor-pointer">
           {/* Darken effect and text on hover */}
           <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
           <span className="text-white text-4xl font-bold transition-opacity duration-300">

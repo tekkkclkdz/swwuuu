@@ -13,7 +13,6 @@ const page = () => {
           {/* Lewa strona: napisy */}
           <div className='flex flex-col justify-center items-center lg:items-start lg:px-16 px-4'>
             <Link href="https://www.selective-mgmt.pl/men/max-gontard-583" className="hover:underline mt-2 text-3xl text-center lg:text-left">selective (Warsaw, Poland)</Link>
-            <h1 className='font-light text-center lg:text-left'>mila@selective-mgmt.pl</h1>
             <h1 className='font-light text-center lg:text-left'>sylwia@selective-mgmt.pl</h1>
             <hr className='my-4 w-44 border-black'></hr>
 
@@ -27,6 +26,11 @@ const page = () => {
             <h1 className='font-light text-center lg:text-left'>mariateresam@nextmanagement.com</h1>
             <h1 className='font-light text-center lg:text-left'>camillab@nextmanagement.com</h1>
             <hr className='my-4 w-44 border-black'></hr>
+            
+            <Link href="https://www.nextmanagement.com/madrid/madrid-men-new-faces/all/2406076/max-gontard#portfolio" className="hover:underline mt-2 text-3xl text-center lg:text-left">next (Madrid, Spain)</Link>
+            <h1 className='font-light text-center lg:text-left'>dailosr@nextmanagement.com</h1>
+
+            <hr className='my-4 w-44 border-black'></hr>
 
             <Link href="https://elitemodelmanagement.com/copenhagen/development/11395-max-gontard.web" className="hover:underline mt-2 text-3xl text-center lg:text-left">elite (Copenhagen, Denmark)</Link>
             <h1 className='font-light text-center lg:text-left'>m.knudsen@elitemodel.dk</h1>
@@ -37,8 +41,19 @@ const page = () => {
             <h1 className='font-light text-center lg:text-left'>emily@models1.co.uk</h1>
             <h1 className='font-light text-center lg:text-left'>milena@models1.co.uk</h1>
             <hr className='my-4 w-44 border-black'></hr>
+            
+            
+            <Link href="https://www.izaio.de/sedcard/max-gontard/950?board=2" className="hover:underline mt-2 text-3xl text-center lg:text-left">IZAIO Model Management (Berlin, Germany)</Link>
+
+            <hr className='my-4 w-44 border-black'></hr>
+            
+            
+            <Link href="https://www.soulartistmanagement.com/gentlemen/new-faces/1549-max-gontard/" className="hover:underline mt-2 text-3xl text-center lg:text-left">Soul Artists (NYC, USA) </Link>
+
+            <hr className='my-4 w-44 border-black'></hr>
 
             <Link href="https://models.com/models/max-gontard" className="hover:underline mt-2 mb-12 text-3xl text-center lg:text-left">models.com</Link>
+            
           </div>
 
           {/* Prawa strona: obraz */}
