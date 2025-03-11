@@ -3,11 +3,9 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import Masonry from "react-masonry-css";
 
-import type { LightGallery } from 'lightgallery/lightgallery';
-import LightGalleryComponent from 'lightgallery/react';
-import 'lightgallery/css/lightgallery.css';
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
-import lgZoom from 'lightgallery/plugins/zoom';
+import type { LightGallery } from "lightgallery/lightgallery";
+import LightGalleryComponent from "lightgallery/react";
+import "lightgallery/css/lightgallery.css";
 
 import pic1 from "../../../public/new_photo/SWU12_1.webp";
 import pic2 from "../../../public/new_photo/SWU14-5.webp";
@@ -20,27 +18,24 @@ import pic8 from "../../../public/new_photo/SWU29-3-tiff.webp";
 import pic9 from "../../../public/new_photo/SWU30-6.webp";
 import pic10 from "../../../public/new_photo/SWU31-2.webp";
 
-
-
 const pictures = [pic1, pic5, pic7, pic2, pic6, pic4, pic8, pic3, pic9, pic10];
 
 const breakpointColumnsObj = {
   default: 5,
   1024: 4,
   768: 2,
-
 };
-
 
 export default function Home() {
   const lightboxRef = useRef<LightGallery | null>(null);
 
   return (
-    <div className="bg-white" >
+    <div className="bg-white min-h-screen flex flex-col items-center">
+      {/* Masonry Grid Wrapper */}
       <Masonry
         breakpointCols={breakpointColumnsObj}
-        className="flex w-full gap-4 px-4"
-        columnClassName="masonry-column"
+        className="flex w-full sm:w-[50vw] mx-auto gap-4 px-4"
+        columnClassName="flex flex-col gap-4"
       >
         {pictures.map((pics, idx) => (
           <div key={pics.src} className="my-2">
@@ -59,6 +54,8 @@ export default function Home() {
           </div>
         ))}
       </Masonry>
+
+      {/* Lightbox */}
       <LightGalleryComponent
         onInit={(ref) => {
           if (ref) {
@@ -79,7 +76,6 @@ export default function Home() {
           showCloseIcon: true,
           download: false,
         }}
-        
       />
     </div>
   );

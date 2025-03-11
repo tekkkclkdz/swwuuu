@@ -28,15 +28,7 @@ const newMain = () => {
       className="w-full"
     />
   </div>
-  <div className="w-screen h-auto relative">
-    <Image
-      src={pic3}
-      alt="Image 3"
-      layout="intrinsic"
-      objectFit="contain"
-      className="w-full"
-    />
-  </div>
+  
 </div>
   )
 }

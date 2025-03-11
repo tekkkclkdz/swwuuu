@@ -13,7 +13,7 @@ const MainBody = () => {
                
 
                 <div className='relative'>
-                    <Image src={pic2} alt="pic8" layout="responsive" className='rotate-180' />
+                    <Image src={pic2} alt="pic8" layout="responsive" className='' />
                     <div className='absolute inset-0 flex justify-center items-center'>
                         <div className='absolute inset-0 flex justify-center items-center'>
                             <div className='w-5/12'>
@@ -23,7 +23,7 @@ const MainBody = () => {
                     </div>
                 </div>
                 <div className='relative'>
-                    <Image src={pic1} alt="pic8" layout="responsive" className='rotate-180' />
+                    <Image src={pic1} alt="pic8" layout="responsive" className='' />
                     <div className='absolute inset-0 flex justify-center items-center'>
                         <div className='absolute inset-0 flex justify-center items-center'>
                             <div className='w-5/12'>

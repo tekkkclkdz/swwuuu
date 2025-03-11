@@ -55,7 +55,7 @@ const PageBody = () => {
           <Link href="/poland" legacyBehavior>
       <div className="relative w-[80%] h-[125px] flex justify-center items-center mt-10 overflow-hidden cursor-pointer">
         <Image 
-          src={strip1} 
+          src={pl2} 
           alt="Strip1" 
           layout="fill" 
           objectFit="cover" 
@@ -87,7 +87,7 @@ const PageBody = () => {
 <Link href="/all" legacyBehavior>
         <div className="relative w-[80%] h-[125px] flex justify-center items-center mt-10 overflow-hidden cursor-pointer">
           <Image 
-            src={strip1} 
+            src={all1} 
             alt="Strip1" 
             layout="fill" 
             objectFit="cover" 

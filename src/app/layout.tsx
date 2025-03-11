@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Genos } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+import { MailIcon } from "@heroicons/react/solid";
+import { FaInstagram } from "react-icons/fa";
 
 const genos = Genos({ subsets: ["latin"] });
 
@@ -20,13 +20,21 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <link rel="shortcut icon" href="./favicon.ico" />
       <body className={`${genos.className} flex flex-col min-h-screen`}>
-        <main className="">{children}</main>
-        <footer className=" bg-black w-full h-60 sm:h-96">
-          <div className="grid grid-flow-row text-xl sm:text-3xl gap-4 sm:gap-8 ml-2 sm:ml-20 mt-4 sm:mt-8 text-white">
-            <a href="/model">Managment</a>
-            <h1>maxantoine.swu@gmail.com</h1>
-            <Link href="https://www.instagram.com/3sswwuu/" className="hover:underline">@3sswwuu</Link>
-            <Link href="https://www.mathiaskarlgontard.com/" className="hover:underline">Mathias Karl Gontard</Link>
+        <main className="flex-1">{children}</main>
+
+        {/* FOOTER */}
+        <footer className="bg-black w-full h-32 sm:h-48 flex justify-center items-center">
+          <div className="flex space-x-6">
+            <a
+              href="https://www.instagram.com/maaxantoine/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="w-10 h-10 text-white hover:text-gray-400 transition-colors" />
+            </a>
+            <a href="mailto:maxantoine.swu@gmail.com">
+              <MailIcon className="w-10 h-10 text-white hover:text-gray-400 transition-colors" />
+            </a>
           </div>
         </footer>
       </body>

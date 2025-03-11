@@ -9,9 +9,10 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-white text-black text-center p-5">
       <div className="mb-5">
-        <h1 className="text-2xl font-bold">2005</h1>
-        <p className="text-lg ">French/Polish</p>
-        <p className="text-lg mt-4">Based in London.</p>
+        <h1 className="text-2xl">2005</h1>
+        <p className="text-lg ">French & Polish</p>
+        <p className='text-lg'>born in 2005</p>
+        <p className="text-lg">Based in London.</p>
       </div>
 
       {/* Ikony Instagrama i maila */}

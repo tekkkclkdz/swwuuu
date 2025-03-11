@@ -57,8 +57,8 @@ const NavBar = ({ home, isSelected }: { home: number; isSelected: number }) => {
             key={index}
             className={`p-4 text-sm sm:text-4xl text-center ${isSelected === index ? 'underline' : ''
               } hover:underline`}
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
           >
             {label}
           </Link>
