@@ -1,9 +1,8 @@
-import Image from 'next/image'
-import { MailIcon,  } from '@heroicons/react/solid' // Importujemy ikony bez rozmiaru
-import { FaInstagram, FaEnvelope } from 'react-icons/fa'
-import bioImage from '../../../public/public2/bio.jpg' // Zmien ścieżkę w razie potrzeby
-import NavBar from '../components/NavBar'
-
+import Image from 'next/image';
+import { FaInstagram } from 'react-icons/fa';
+import { HiOutlineMail } from 'react-icons/hi'; // Nowa ikona maila
+import bioImage from '../../../public/public2/bio.jpg';
+import NavBar from '../components/NavBar';
 
 export default function Home() {
   return (
@@ -11,7 +10,7 @@ export default function Home() {
       <div className="mb-5">
         <h1 className="text-2xl">2005</h1>
         <p className="text-lg ">French & Polish</p>
-        <p className='text-lg'>born in 2005</p>
+        <p className="text-lg">born in 2005</p>
         <p className="text-lg">Based in London.</p>
       </div>
 
@@ -21,14 +20,15 @@ export default function Home() {
           <FaInstagram className="w-10 h-10 text-black hover:text-gray-700 transition-colors" />
         </a>
         <a href="mailto:maxantoine.swu@gmail.com">
-          <MailIcon className="w-10 h-10 text-black hover:text-gray-700 transition-colors" />
+          <HiOutlineMail className="w-10 h-10 text-black hover:text-gray-700 transition-colors" />
         </a>
       </div>
 
       <div className="mt-20">
-        <Image src={bioImage} alt="Bio1 Image " className="rotate-90" width={400} height={400} />
+        <Image src={bioImage} alt="Bio1 Image" className="rotate-90" width={400} height={400} />
       </div>
+
       <NavBar home={0} isSelected={5} />
     </div>
-  )
+  );
 }

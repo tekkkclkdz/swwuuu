@@ -3,6 +3,7 @@ import { Genos } from "next/font/google";
 import "./globals.css";
 import { MailIcon } from "@heroicons/react/solid";
 import { FaInstagram } from "react-icons/fa";
+import { HiOutlineMail } from 'react-icons/hi'; // Nowa ikona maila
 
 const genos = Genos({ subsets: ["latin"] });
 
@@ -33,7 +34,7 @@ export default function RootLayout({
               <FaInstagram className="w-10 h-10 text-white hover:text-gray-400 transition-colors" />
             </a>
             <a href="mailto:maxantoine.swu@gmail.com">
-              <MailIcon className="w-10 h-10 text-white hover:text-gray-400 transition-colors" />
+              <HiOutlineMail className="w-10 h-10 text-white hover:text-gray-400 transition-colors" />
             </a>
           </div>
         </footer>

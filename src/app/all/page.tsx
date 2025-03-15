@@ -71,6 +71,7 @@ export default function Home() {
           src: allImg.src,
         }))}
       />
+      {/* <div className="h-9 bg-white w-full"></div> */}
     </div>
   );
 }

@@ -1,29 +1,15 @@
-"use client"
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import GIF1 from '../../../public/StepWebPolangGif-ezgif.com-optimize (1).gif';
-import PIC1 from '../../../public/long2/podfilm.png';
-import video from '../../../public/AV1-ezgif.com-optimize.gif';
 import NavBar from '../components/NavBar';
 
-const slides = [
-  { type: 'image', src: GIF1, alt: 'GIF Slide' },
-  { type: 'video', src: video, alt: 'Video Slide' },
-];
+import GIF1 from "../../../public/StepWebPolangGif-ezgif.com-optimize (1).gif";
+import PIC1 from "../../../public/long2/podfilm.png"
+
+import video from "../../../public/WBWEBCUTV2-ezgif.com-video-to-gif-converter.gif"
 
 const Page = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
-
   return (
-    <div className="relative bg-black h-screen">
+    <div className='relative bg-black h-screen'>
       {/* Background Image */}
       <Image
         src={PIC1}
@@ -33,53 +19,28 @@ const Page = () => {
         objectPosition="center"
         className="absolute inset-0 z-0"
       />
-
+      
       {/* Content */}
-      <div className="h-full flex flex-col justify-center items-center relative z-10">
-        {/* Slideshow */}
-        <div className="relative w-3/4 h-3/4">
-          {slides[currentSlide].type === 'image' && (
-            <Image
-              src={slides[currentSlide].src}
-              alt={slides[currentSlide].alt}
-              layout="fill"
-              objectFit="contain"
-              className="transition-opacity duration-500"
-            />
-          )}
-          {slides[currentSlide].type === 'video' && (
-            <Image
-              src={slides[currentSlide].src}
-              alt={slides[currentSlide].alt}
-              layout="fill"
-              objectFit="contain"
-              className="transition-opacity duration-500"
-            />
-          )}
+      <div className='h-full flex flex-col relative z-10'>
+        {/* Centered Image */}
+        <div className='flex-grow flex justify-center items-center flex-col'>
+          <div className='h-2/3 w-2/3'>
+            <Image src={video} alt="smm" className='object-contain h-full w-full' />
+          </div>
+
+          {/* Centered Text directly under video */}
+          <div className="text-center text-white w-full pt-2">
+            <p className="text-lg">Short film, Warsaw Boy (2022)</p>
+            <p className="text-lg">Directed by Natalia Naomi</p>
+            <p className="text-lg">Contact for link</p>
+          </div>
         </div>
 
-        {/* Navigation Arrows Below Slideshow */}
-        <div className="flex justify-between w-1/2 mt-4">
-          {/* Left Arrow */}
-          <button
-            onClick={prevSlide}
-            className="text-white text-4xl p-2"
-          >
-            &#8592;
-          </button>
-
-          {/* Right Arrow */}
-          <button
-            onClick={nextSlide}
-            className="text-white text-4xl p-2"
-          >
-            &#8594;
-          </button>
-        </div>
+        {/* Navigation */}
+        <NavBar home={0} isSelected={4} />
       </div>
-      <NavBar home={0} isSelected={4}/>
     </div>
   );
-};
+}
 
 export default Page;

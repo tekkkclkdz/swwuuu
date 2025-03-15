@@ -58,13 +58,13 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ title, image, audioSrc }) => 
   return (
     <div className="flex items-center bg-black text-white p-6  shadow-lg w-full h-[30vh] ">
       {/* Kwadratowy obrazek */}
-      <div className="w-60 h-60 mr-4 overflow-hidden">
+      <div className="w-56 h-56 mr-4 overflow-hidden">
         <Image src={image} alt={title} width={256} height={256} className="object-cover w-full h-full" />
       </div>
 
       {/* Zawartość */}
       <div className="flex-1 flex flex-col justify-between h-full">
-        <h3 className="text-2xl font-medium mb-4 hover:underline cursor-pointer">{title}</h3>
+        <h3 className="text-2xl font-medium ml-8 mb-4 hover:underline cursor-pointer">{title}</h3>
 
         <div className="flex flex-col items-left w-full gap-4">
           {/* Kontrola odtwarzania */}
@@ -93,7 +93,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ title, image, audioSrc }) => 
 
           {/* Pasek postępu */}
           <div 
-            className="w-full ml-5 bg-gray-600 h-1 rounded-full cursor-pointer" 
+            className="w-full ml-5 bg-white h-1 rounded-full cursor-pointer" 
             onClick={handleProgressClick}
           >
             <div 
