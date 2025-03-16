@@ -11,22 +11,26 @@ interface AudioPlayerProps {
 
 const AudioPlayer: React.FC<AudioPlayerProps> = ({ title, image, audioSrc }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const progressBarRef = useRef<HTMLDivElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
     const updateProgress = () => {
-      setProgress((audio.currentTime / audio.duration) * 100);
+      if (!isDragging) {
+        setProgress((audio.currentTime / audio.duration) * 100);
+      }
     };
 
     audio.addEventListener("timeupdate", updateProgress);
     return () => {
       audio.removeEventListener("timeupdate", updateProgress);
     };
-  }, []);
+  }, [isDragging]);
 
   const togglePlayPause = () => {
     if (audioRef.current) {
@@ -36,15 +40,55 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ title, image, audioSrc }) => 
   };
 
   const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    const { offsetX } = e.nativeEvent;
-    const { offsetWidth } = e.currentTarget;
-    const newTime = (offsetX / offsetWidth) * audio.duration;
-    audio.currentTime = newTime;
-    setProgress((newTime / audio.duration) * 100);
+    updateProgressFromClick(e.nativeEvent.clientX);
   };
+
+  const updateProgressFromClick = (clientX: number) => {
+    const audio = audioRef.current;
+    if (!audio || !progressBarRef.current) return;
+
+    const { left, width } = progressBarRef.current.getBoundingClientRect();
+    let newProgress = ((clientX - left) / width) * 100;
+    newProgress = Math.max(0, Math.min(100, newProgress));
+
+    setProgress(newProgress);
+    audio.currentTime = (newProgress / 100) * audio.duration;
+  };
+
+  const handleDragStart = () => {
+    setIsDragging(true);
+  };
+
+  const handleDragMove = (e: MouseEvent | TouchEvent) => {
+    if (!isDragging) return;
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+    updateProgressFromClick(clientX);
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+  };
+
+  useEffect(() => {
+    if (isDragging) {
+      window.addEventListener("mousemove", handleDragMove);
+      window.addEventListener("mouseup", handleDragEnd);
+      window.addEventListener("touchmove", handleDragMove);
+      window.addEventListener("touchend", handleDragEnd);
+    } else {
+      window.removeEventListener("mousemove", handleDragMove);
+      window.removeEventListener("mouseup", handleDragEnd);
+      window.removeEventListener("touchmove", handleDragMove);
+      window.removeEventListener("touchend", handleDragEnd);
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleDragMove);
+      window.removeEventListener("mouseup", handleDragEnd);
+      window.removeEventListener("touchmove", handleDragMove);
+      window.removeEventListener("touchend", handleDragEnd);
+    };
+  }, [isDragging]);
 
   const skipTime = (seconds: number) => {
     if (audioRef.current) {
@@ -56,9 +100,9 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ title, image, audioSrc }) => 
   };
 
   return (
-    <div className="flex items-center bg-black text-white p-6  shadow-lg w-full h-[30vh] ">
+    <div className="flex items-center bg-black text-white sm:p-6 p-3 shadow-lg w-full h-[25vh] sm:h-[30vh]">
       {/* Kwadratowy obrazek */}
-      <div className="w-56 h-56 mr-4 overflow-hidden">
+      <div className="w-24 h-24 sm:w-56 sm:h-56 mr-4 sm:ml-0 ml-4 overflow-hidden">
         <Image src={image} alt={title} width={256} height={256} className="object-cover w-full h-full" />
       </div>
 
@@ -66,39 +110,47 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ title, image, audioSrc }) => 
       <div className="flex-1 flex flex-col justify-between h-full">
         <h3 className="text-2xl font-medium ml-8 mb-4 hover:underline cursor-pointer">{title}</h3>
 
-        <div className="flex flex-col items-left w-full gap-4">
+        <div className="flex flex-col items-left sm:w-full w-[80%] gap-4">
           {/* Kontrola odtwarzania */}
           <div className="flex items-center gap-6 ml-7 mb-5">
-            <button 
-              onClick={() => skipTime(-10)} 
-              className="mb-1 text-lg"
-            >
+            <button onClick={() => skipTime(-10)} className="mb-1 text-lg">
               -10s
             </button>
 
-            <button 
-              onClick={togglePlayPause} 
-              className=" text-lg"
-            >
-              {isPlaying ? "▐▐" : "▶"}
+            {/* Nowa customowa ikona Play/Pause */}
+            <button onClick={togglePlayPause} className="text-lg flex items-center justify-center  rounded-full">
+              {isPlaying ? (
+                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+              ) : (
+                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5,3 19,12 5,21"></polygon>
+                </svg>
+              )}
             </button>
 
-            <button 
-              onClick={() => skipTime(10)} 
-              className="mb-1 text-lg"
-            >
+            <button onClick={() => skipTime(10)} className="mb-1 text-lg">
               +10s
             </button>
           </div>
 
           {/* Pasek postępu */}
-          <div 
-            className="w-full ml-5 bg-white h-1 rounded-full cursor-pointer" 
+          <div
+            className="relative w-full ml-5 bg-gray-500 h-1 rounded-full cursor-pointer"
             onClick={handleProgressClick}
+            ref={progressBarRef}
           >
-            <div 
-              className="bg-white h-1 rounded-full" 
-              style={{ width: `${progress}%` }}
+            {/* Pasek wypełniony */}
+            <div className="bg-white h-1 rounded-full" style={{ width: `${progress}%` }}></div>
+
+            {/* Kropka do przeciągania */}
+            <div
+              className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-md cursor-pointer"
+              style={{ left: `calc(${progress}% - 7px)` }}
+              onMouseDown={handleDragStart}
+              onTouchStart={handleDragStart}
             ></div>
           </div>
         </div>
