@@ -1,14 +1,12 @@
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
-import GIF1 from '../../../public/StepWebPolangGif-ezgif.com-optimize (1).gif';
 import PIC1 from '../../../public/long2/podfilm.png';
-import video from '../../../public/AV1-ezgif.com-optimize.gif';
 import NavBar from '../components/NavBar';
 
 const slides = [
-  { type: 'image', src: GIF1, alt: 'GIF Slide' },
-  { type: 'video', src: video, alt: 'Video Slide' },
+  { type: 'iframe', src: 'https://player.vimeo.com/video/1066539301?h=82e66574d6' },
+  { type: 'iframe', src: 'https://player.vimeo.com/video/1066539558?h=8605c19742' },
 ];
 
 const Page = () => {
@@ -38,24 +36,15 @@ const Page = () => {
       <div className="h-full flex flex-col justify-center items-center relative z-10">
         {/* Slideshow */}
         <div className="relative w-3/4 h-3/4">
-          {slides[currentSlide].type === 'image' && (
-            <Image
-              src={slides[currentSlide].src}
-              alt={slides[currentSlide].alt}
-              layout="fill"
-              objectFit="contain"
-              className="transition-opacity duration-500"
-            />
-          )}
-          {slides[currentSlide].type === 'video' && (
-            <Image
-              src={slides[currentSlide].src}
-              alt={slides[currentSlide].alt}
-              layout="fill"
-              objectFit="contain"
-              className="transition-opacity duration-500"
-            />
-          )}
+          <iframe
+            src={slides[currentSlide].src}
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            className='object-contain h-full w-full'
+          ></iframe>
         </div>
 
         {/* Navigation Arrows Below Slideshow */}

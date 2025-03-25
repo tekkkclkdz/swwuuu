@@ -2,10 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import NavBar from '../components/NavBar';
 
-import GIF1 from "../../../public/StepWebPolangGif-ezgif.com-optimize (1).gif";
-import PIC1 from "../../../public/long2/podfilm.png"
-
-import video from "../../../public/WBWEBCUTV2-ezgif.com-video-to-gif-converter.gif"
+import PIC1 from "../../../public/long2/podfilm.png";
 
 const Page = () => {
   return (
@@ -22,10 +19,18 @@ const Page = () => {
       
       {/* Content */}
       <div className='h-full flex flex-col relative z-10'>
-        {/* Centered Image */}
+        {/* Centered Video */}
         <div className='flex-grow flex justify-center items-center flex-col'>
           <div className='h-2/3 w-2/3'>
-            <Image src={video} alt="smm" className='object-contain h-full w-full' />
+            <iframe
+              src="https://player.vimeo.com/video/1066539949?h=aabd23ba92"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              className='object-contain h-full w-full'
+            ></iframe>
           </div>
 
           {/* Centered Text directly under video */}

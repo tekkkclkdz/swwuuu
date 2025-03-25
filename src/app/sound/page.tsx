@@ -27,8 +27,8 @@ const Home: React.FC = () => {
           <AudioPlayer title="Rings" image={rings} audioSrc="/sounds/Rings.mp3" />
           <div className="border-t border-gray-400"></div>
           <AudioPlayer title="Rings (Extended)" image={rings} audioSrc="/sounds/Rings(Extended).mp3" />
-          <div className="border-t border-gray-400"></div>
-          <AudioPlayer title="64" image={rings} audioSrc="/sounds/64.mp3" />
+          {/* <div className="border-t border-gray-400"></div> */}
+          {/* <AudioPlayer title="64" image={rings} audioSrc="/sounds/64.mp3" /> */}
         </div>
       </div>
 
