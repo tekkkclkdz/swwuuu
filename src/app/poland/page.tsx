@@ -28,7 +28,7 @@ const pictures = [pl1, pl2, pl3, pl4, pl5, pl6, pl7, pl8, pl9, pl10];
 
 export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const breakpointCols = isMobile ? 1 : 2;
+  const breakpointCols = isMobile ? 2 : 2;
   const lightboxRef = useRef<LightGallery | null>(null);
 
   return (

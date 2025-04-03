@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
+import { FaPlay, FaPause } from "react-icons/fa";
 
 interface AudioPlayerProps {
   title: string;
@@ -63,7 +64,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ title, image, audioSrc }) => 
           <div className="flex items-center gap-6 ml-7 ">
             <button onClick={() => audioRef.current && (audioRef.current.currentTime -= 10)} className="mb-1 text-lg">-10s</button>
             <button onClick={() => { isPlaying ? audioRef.current?.pause() : audioRef.current?.play(); setIsPlaying(!isPlaying); }} className="text-lg flex items-center justify-center rounded-full">
-              {isPlaying ? "⏸" : "▶"}
+            {isPlaying ? <FaPause /> : <FaPlay />}
             </button>
             <button onClick={() => audioRef.current && (audioRef.current.currentTime += 10)} className="mb-1 text-lg">+10s</button>
           </div>
