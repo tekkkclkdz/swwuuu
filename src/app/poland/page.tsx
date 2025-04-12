@@ -23,8 +23,10 @@ import pl7 from "./../../../public/public2/poland/P1-7_con.webp";
 import pl8 from "./../../../public/public2/poland/P1-8_con.webp";
 import pl9 from "./../../../public/public2/poland/P1-09_con.webp";
 import pl10 from "./../../../public/public2/poland/P1-10_con.webp";
+import pl11 from "./../../../public/public2/poland/P1-11_con.webp";
+import pl12 from "./../../../public/public2/poland/P1-12_con.webp";
 
-const pictures = [pl1, pl2, pl3, pl4, pl5, pl6, pl7, pl8, pl9, pl10];
+const pictures = [pl1, pl2, pl3, pl4, pl5, pl6, pl7, pl8, pl9, pl10, pl11, pl12];
 
 export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
